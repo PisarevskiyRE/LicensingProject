@@ -1,7 +1,10 @@
 #содержимое jar
 jar tf licensing-service-0.0.1-SNAPSHOT.jar
 
-#создание jar
+#ЗАПУСК
+mvn spring-boot:run
+
+#создание JAR
 mvn clean package
 
 #создание docker
@@ -15,3 +18,5 @@ docker run ostock/licensing-service:0.0.1-SNAPSHOT
 
 #запущенные контейнеры
 docker ps
+
+
