@@ -1,0 +1,17 @@
+#содержимое jar
+jar tf licensing-service-0.0.1-SNAPSHOT.jar
+
+#создание jar
+mvn clean package
+
+#создание docker
+mvn package dockerfile:build
+
+#все образы
+docker images
+
+#запуск контейнера
+docker run ostock/licensing-service:0.0.1-SNAPSHOT
+
+#запущенные контейнеры
+docker ps
