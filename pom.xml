@@ -23,7 +23,7 @@
     </properties>
 
     <modules>
-<!--        <module>configserver</module>-->
+        <module>configserver</module>
         <module>licensing-service</module>
     </modules>
     <build>
