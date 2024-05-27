@@ -1,7 +1,7 @@
 spring:
   application:
     name: licensing-service
-  profile:
+  profiles:
     active: dev
   cloud:
     config:
