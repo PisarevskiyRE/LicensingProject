@@ -11,7 +11,6 @@ import com.optimagrowth.license.model.Organization;
 @FeignClient("organization-service")
 public interface OrganizationFeignClient {
     @RequestMapping(
-
             method= RequestMethod.GET,
             value="/v1/organization/{organizationId}",
             consumes="application/json")
