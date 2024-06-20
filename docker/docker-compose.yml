@@ -101,11 +101,12 @@ services:
       - backend
 
   keycloak:
-    image: jboss/keycloak
+    image: yseopops/keycloak:6.0.1
     restart: always
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_DATABASE_PORT: "5432"
     ports:
       - "8080:8080"
     networks:

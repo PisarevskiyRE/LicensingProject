@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.optimagrowth.organization.model.Organization;
 import com.optimagrowth.organization.service.OrganizationService;
 
+
 @RestController
 @RequestMapping(value="v1/organization")
 public class OrganizationController {
@@ -33,7 +34,7 @@ public class OrganizationController {
 
     @PostMapping
     public ResponseEntity<Organization>  saveOrganization(@RequestBody Organization organization) {
-    	return ResponseEntity.ok(service.create(organization));
+        return ResponseEntity.ok(service.create(organization));
     }
 
     @RequestMapping(value="/{organizationId}",method = RequestMethod.DELETE)
