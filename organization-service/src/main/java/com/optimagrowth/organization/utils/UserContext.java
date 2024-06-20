@@ -2,7 +2,6 @@ package com.optimagrowth.organization.utils;
 
 import org.springframework.stereotype.Component;
 
-
 @Component
 public class UserContext {
     public static final String CORRELATION_ID = "tmx-correlation-id";

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.optimagrowth.organization.model.Organization;
 import com.optimagrowth.organization.repository.OrganizationRepository;
 
-
 @Service
 public class OrganizationService {
 
@@ -36,8 +35,8 @@ public class OrganizationService {
         repository.save(organization);
     }
 
-    public void delete(Organization organization){
-        repository.deleteById(organization.getId());
+    public void delete(String organizationId){
+        repository.deleteById(organizationId);
     }
 
     @SuppressWarnings("unused")
