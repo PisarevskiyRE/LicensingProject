@@ -48,12 +48,12 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
 	}
 
 	/**
-	 * handleIOException - Handles all the Authentication Exceptions of the application. 
+	 * handleIOException - Handles all the Authentication Exceptions of the application.
 	 *@param request
 	 *@param exception
 	 *@return ResponseEntity<ResponseWrapper>
 	 * @user ihuaylupo
-	 * @since 2018-09-12 
+	 * @since 2018-09-12
 	 */
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<ResponseWrapper> handleIOException(HttpServletRequest request, RuntimeException e){

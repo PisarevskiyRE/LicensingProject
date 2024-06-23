@@ -70,23 +70,7 @@ public class LicenseService {
 	private Organization retrieveOrganizationInfo(String organizationId, String clientType) {
 		Organization organization = null;
 
-		switch (clientType) {
-			case "feign":
-				System.out.println("I am using the feign client");
-				organization = organizationFeignClient.getOrganization(organizationId);
-				break;
-			case "rest":
-				System.out.println("I am using the rest client");
-				organization = organizationRestClient.getOrganization(organizationId);
-				break;
-			case "discovery":
-				System.out.println("I am using the discovery client");
-				organization = organizationDiscoveryClient.getOrganization(organizationId);
-				break;
-			default:
-				organization = organizationRestClient.getOrganization(organizationId);
-				break;
-		}
+		organization = organizationRestClient.getOrganization(organizationId);
 
 		return organization;
 	}
@@ -136,16 +120,14 @@ public class LicenseService {
 		return fallbackList;
 	}
 
-	private void randomlyRunLong() throws TimeoutException{
+	private void randomlyRunLong(){
 		Random rand = new Random();
 		int randomNum = rand.nextInt((3 - 1) + 1) + 1;
 		if (randomNum==3) sleep();
 	}
-	private void sleep() throws TimeoutException{
+	private void sleep(){
 		try {
-			System.out.println("Sleep");
-			Thread.sleep(5000);
-			throw new java.util.concurrent.TimeoutException();
+			Thread.sleep(11000);
 		} catch (InterruptedException e) {
 			logger.error(e.getMessage());
 		}

@@ -7,17 +7,17 @@ package com.optimagrowth.license.model.utils;
  * @since Jun 25, 2018
  */
 public class ErrorMessage {
-	
-    /**
+
+	/**
 	 * @param message
 	 * @param code
 	 * @param detail
 	 */
 	private String message;
 	private String code;
-    private String detail;
+	private String detail;
 
-    
+
 	public ErrorMessage(String message, String code, String detail) {
 		super();
 		this.message = message;
@@ -31,9 +31,9 @@ public class ErrorMessage {
 		this.detail = detail;
 	}
 
-    public ErrorMessage(String message) {
-        this(message, "", "");
-    }
+	public ErrorMessage(String message) {
+		this(message, "", "");
+	}
 
 	/**
 	 * @return the message
@@ -77,7 +77,7 @@ public class ErrorMessage {
 		this.detail = detail;
 	}
 
-    
+
 
 
 }
