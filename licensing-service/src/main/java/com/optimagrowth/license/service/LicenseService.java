@@ -64,13 +64,29 @@ public class LicenseService {
 			license.setContactPhone(organization.getContactPhone());
 		}
 
-		return license.withComment(config.getProperty());
+		return license.withComment(config.getExampleProperty());
 	}
 
 	private Organization retrieveOrganizationInfo(String organizationId, String clientType) {
 		Organization organization = null;
 
-		organization = organizationRestClient.getOrganization(organizationId);
+		switch (clientType) {
+			case "feign":
+				System.out.println("I am using the feign client");
+				organization = organizationFeignClient.getOrganization(organizationId);
+				break;
+			case "rest":
+				System.out.println("I am using the rest client");
+				organization = organizationRestClient.getOrganization(organizationId);
+				break;
+			case "discovery":
+				System.out.println("I am using the discovery client");
+				organization = organizationDiscoveryClient.getOrganization(organizationId);
+				break;
+			default:
+				organization = organizationRestClient.getOrganization(organizationId);
+				break;
+		}
 
 		return organization;
 	}
@@ -79,13 +95,13 @@ public class LicenseService {
 		license.setLicenseId(UUID.randomUUID().toString());
 		licenseRepository.save(license);
 
-		return license.withComment(config.getProperty());
+		return license.withComment(config.getExampleProperty());
 	}
 
 	public License updateLicense(License license){
 		licenseRepository.save(license);
 
-		return license.withComment(config.getProperty());
+		return license.withComment(config.getExampleProperty());
 	}
 
 	public String deleteLicense(String licenseId){
