@@ -10,7 +10,7 @@ import org.springframework.cloud.stream.messaging.Source;
 @RefreshScope
 @EnableBinding(Source.class)
 public class OrganizationServiceApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(OrganizationServiceApplication.class, args);
 	}

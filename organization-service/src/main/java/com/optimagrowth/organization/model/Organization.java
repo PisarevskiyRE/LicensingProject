@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.ToString;
+
+@ToString
 @Entity
 @Table(name = "organizations")
 public class Organization {
